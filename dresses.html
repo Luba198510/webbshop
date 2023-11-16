@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Dresses</title>
+    <link rel="stylesheet" href="your_styles.css"> <!-- Link to your existing styles -->
+    <style>
+        /* Add any additional styles specific to this page */
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .dress {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .dress img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style for the modal window */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modal-content {
+            background: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        #close-btn {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <div class="dress" onclick="openModal('Dress 1', 'Short description of Dress 1', 'dress1.jpg')">
+            <img src="dress1_thumb.jpg" alt="Dress 1">
+            <p>Dress 1</p>
+        </div>
+
+        <div class="dress" onclick="openModal('Dress 2', 'Short description of Dress 2', 'dress2.jpg')">
+            <img src="dress2_thumb.jpg" alt="Dress 2">
+            <p>Dress 2</p>
+        </div>
+
+        <div class="dress" onclick="openModal('Dress 3', 'Short description of Dress 3', 'dress3.jpg')">
+            <img src="dress3_thumb.jpg" alt="Dress 3">
+            <p>Dress 3</p>
+        </div>
+
+        <div class="dress" onclick="openModal('Dress 4', 'Short description of Dress 4', 'dress4.jpg')">
+            <img src="dress4_thumb.jpg" alt="Dress 4">
+            <p>Dress 4</p>
+        </div>
+
+        <div class="dress" onclick="openModal('Dress 5', 'Short description of Dress 5', 'dress5.jpg')">
+            <img src="dress5_thumb.jpg" alt="Dress 5">
+            <p>Dress 5</p>
+        </div>
+    </div>
+
+    <!-- Modal window -->
+    <div id="modal">
+        <div id="modal-content">
+            <span id="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <img id="modal-image" alt="Modal Dress">
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, description, image) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-image').src = image;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
